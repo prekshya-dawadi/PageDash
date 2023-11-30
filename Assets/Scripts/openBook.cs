@@ -4,12 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class flip : MonoBehaviour
+public class openBook : MonoBehaviour
 {
     [SerializeField]
 
     private Vector3 rotationVector;
     private bool spaceDown = false;
+    private DateTime startTime;
+    private DateTime endTime;
+    // private RigidBody rb;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,12 +29,19 @@ public class flip : MonoBehaviour
         }
         
         if (spaceDown == true){
-            transform.Rotate(rotationVector*Time.deltaTime);    
+            transform.Rotate(rotationVector*Time.deltaTime);
+            endTime = DateTime.Now;
+
+            if ((endTime - startTime).TotalSeconds>=1)
+            {
+                spaceDown = false;
+            }    
         }
     }
 
     void space_down(){
         spaceDown = true;
         rotationVector = new Vector3(0,90,0);
+        startTime = DateTime.Now;
     }
 }
