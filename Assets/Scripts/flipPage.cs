@@ -1,43 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using System;
 
-public class flipPage : MonoBehaviour
+public class FlipPage : MonoBehaviour
 {
-    [SerializeField]
-
     private Vector3 rotationVector;
-    private DateTime startTime;
-    private DateTime endTime;
     private bool flip = false;
+    private float flipDuration = 1.5f;  // Adjust the duration as needed
+    private float startTime;
 
-    // Start is called before the first frame update
     void Start()
     {
         Rotate();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (flip == true)
+        if (flip)
         {
-            transform.Rotate(rotationVector * Time.deltaTime);
-            endTime = DateTime.Now;
+            float t = (Time.time - startTime) / flipDuration;
+            transform.rotation = Quaternion.Euler(Mathf.Lerp(0, -90, t), 0, 0);
 
-            if ((endTime - startTime).TotalSeconds >= 1.5)
+            if (t >= 1.0f)
             {
                 flip = false;
+                FindObjectOfType<FlipManager>().OnFlipFinished();
             }
         }
-
     }
 
-    void Rotate(){
-        startTime = DateTime.Now;
-        rotationVector = new Vector3(0, 90, 0);
+    public void StartFlip(GameObject targetObject)
+    {
+        Rotate();
         flip = true;
+    }
+
+    void Rotate()
+    {
+        startTime = Time.time;
     }
 }
