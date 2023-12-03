@@ -5,8 +5,6 @@ public class FlipPage : MonoBehaviour
     private bool flip = false;
     private float flipDuration = 1.5f;  // Adjust the duration as needed
     private float startTime;
-    private Vector3 originalPosition;
-
     void start(){
     }
 
