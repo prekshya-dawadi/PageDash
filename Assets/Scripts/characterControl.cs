@@ -11,10 +11,10 @@ public class characterControl : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         top_boundary = -0.62f; 
-        bottom_boundary = -3.2f; 
-        left_boundary = -4.85f;  
+        bottom_boundary = -3.5f; 
+        left_boundary = -5.0f;  
         right_boundary = -0.77f;  
-        movement_rate = 3;
+        movement_rate = 2;
     }
 
     void Update()
