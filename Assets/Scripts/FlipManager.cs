@@ -3,19 +3,37 @@ using UnityEngine;
 public class FlipManager : MonoBehaviour
 {
     public FlipPage flip;
-    public GameObject firstObject;
-    public GameObject secondObject;
-
+    public GameObject firstPage;
+    public GameObject secondPage;
+    public GameObject thirdPage;
+    public GameObject fourthPage;
+    public GameObject fifthPage;
+    GameObject[] pageCollection = new GameObject[5];
     private bool isFirstObjectFlipping = false;
 
     void Start()
     {
-        StartFlipping(firstObject);
+        pageCollection[0] = firstPage;
+        pageCollection[1] = secondPage;
+        pageCollection[2] = thirdPage;
+        pageCollection[3] = fourthPage;
+        pageCollection[4] = fifthPage;
+
+        StartFlip(pageCollection[Random.Range(0, pageCollection.Length)]);
     }
 
-    void StartFlipping(GameObject targetObject)
+    void StartFlip(GameObject targetObject)
     {
-        flip.StartFlip(targetObject);
+        FlipPage flipPageComponent = targetObject.GetComponent<FlipPage>();
+        if (flipPageComponent != null)
+        {
+            flipPageComponent.StartFlip();
+        }
+        else
+        {
+            Debug.LogError("No FlipPage component found on the target object: " + targetObject.name);
+        }
+
         isFirstObjectFlipping = true;
     }
 
@@ -24,7 +42,7 @@ public class FlipManager : MonoBehaviour
         if (isFirstObjectFlipping)
         {
             isFirstObjectFlipping = false;
-            StartFlipping(secondObject);
+            StartFlip(pageCollection[Random.Range(0, pageCollection.Length)]);
         }
     }
 }

@@ -2,15 +2,9 @@ using UnityEngine;
 
 public class FlipPage : MonoBehaviour
 {
-    private Vector3 rotationVector;
     private bool flip = false;
     private float flipDuration = 1.5f;  // Adjust the duration as needed
     private float startTime;
-
-    void Start()
-    {
-        Rotate();
-    }
 
     void Update()
     {
@@ -27,13 +21,13 @@ public class FlipPage : MonoBehaviour
         }
     }
 
-    public void StartFlip(GameObject targetObject)
+    public void StartFlip()
     {
         Rotate();
         flip = true;
     }
 
-    void Rotate()
+    private void Rotate()
     {
         startTime = Time.time;
     }
