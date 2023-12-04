@@ -2,66 +2,71 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class characterControl : MonoBehaviour
+public class CharacterControl : MonoBehaviour
 {
-    Rigidbody rb;
-    float top_boundary, bottom_boundary, left_boundary, right_boundary, movement_rate;
+    float top_boundary, bottom_boundary, left_boundary, right_boundary;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        top_boundary = -0.62f; 
-        bottom_boundary = -3.5f; 
-        left_boundary = -5.0f;  
-        right_boundary = -0.77f;  
-        movement_rate = 2;
+        top_boundary = -0.62f;
+        bottom_boundary = -3.5f;
+        left_boundary = -5.0f;
+        right_boundary = -0.77f;
     }
 
     void Update()
     {
         if (Input.GetKey("up"))
         {
-            if (transform.position.z <= top_boundary)
+            if (transform.position.z >= top_boundary)
             {
-                rb.velocity = new Vector3(0, 0, movement_rate);
+                GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
             }
             else
             {
-                rb.velocity = Vector3.zero;
+                GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 2);
             }
         }
         if (Input.GetKey("down"))
         {
-            if (transform.position.z >= bottom_boundary)
+            if (transform.position.z <= bottom_boundary)
             {
-                rb.velocity = new Vector3(0, 0, -movement_rate);
+                GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
             }
             else
             {
-                rb.velocity = Vector3.zero;
+                GetComponent<Rigidbody>().velocity = new Vector3(0, 0, -2);
             }
         }
         if (Input.GetKey("right"))
         {
-            if (transform.position.x <= right_boundary)
+            if (transform.position.x >= right_boundary)
             {
-                rb.velocity = new Vector3(movement_rate, 0, 0);
+                GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+
             }
             else
             {
-                rb.velocity = Vector3.zero;
+                GetComponent<Rigidbody>().velocity = new Vector3(2, 0, 0);
+
             }
         }
         if (Input.GetKey("left"))
         {
-            if (transform.position.x >= left_boundary)
+            if (transform.position.x <= left_boundary)
             {
-                rb.velocity = new Vector3(-movement_rate, 0, 0);
+                GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+
             }
             else
             {
-                rb.velocity = Vector3.zero;
+                GetComponent<Rigidbody>().velocity = new Vector3(-2, 0, 0);
+
             }
         }
     }
+
 }
+
+
+

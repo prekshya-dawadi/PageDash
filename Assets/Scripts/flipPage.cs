@@ -3,7 +3,7 @@ using UnityEngine;
 public class FlipPage : MonoBehaviour
 {
     private bool flip = false;
-    private float flipDuration = 4f;  // Adjust the duration as needed
+    private float flipDuration = 1.5f;  // Adjust the duration as needed
     private float startTime;
     void start(){
     }
@@ -15,7 +15,7 @@ public class FlipPage : MonoBehaviour
             float t = (Time.time - startTime) / flipDuration;
             transform.rotation = Quaternion.Euler(Mathf.Lerp(0, -90, t), 0, 0);
 
-            if (t >= 4.0f)
+            if (t >= 1.0f)
             {
                 flip = false;
                 FindObjectOfType<FlipManager>().OnFlipFinished();
