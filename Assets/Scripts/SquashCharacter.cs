@@ -1,16 +1,15 @@
+// Attach this script to "Player" sphere
 using UnityEngine;
 
 public class SquashCharacter : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision detected with: " + collision.gameObject.name);
-
-        if (collision.gameObject.CompareTag("Page"))
+        if (other.CompareTag("Page") || other.CompareTag("Character"))
         {
-            Debug.Log("Player collided with Page!");
-            Destroy(gameObject);
+            Debug.Log("Player triggered with Page!");
+            // Perform any actions or effects as needed
+            Destroy(gameObject); // Destroy the player object in this example
         }
     }
-
 }
