@@ -3,7 +3,7 @@ using UnityEngine;
 public class FlipPage : MonoBehaviour
 {
     private bool flip = false;
-    private float flipDuration = 2f;  // Adjust the duration as needed
+    private float flipDuration = 2f;  
     private float startTime;
     void start(){
     }

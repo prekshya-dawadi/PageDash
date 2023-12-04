@@ -1,5 +1,5 @@
-// Attach this script to "Player" sphere
 using UnityEngine;
+using System.Collections;
 
 public class SquashCharacter : MonoBehaviour
 {
@@ -8,8 +8,15 @@ public class SquashCharacter : MonoBehaviour
         if (other.CompareTag("Page") || other.CompareTag("Character"))
         {
             Debug.Log("Player triggered with Page!");
-            // Perform any actions or effects as needed
-            Destroy(gameObject); // Destroy the player object in this example
+            StartCoroutine(TimeDelay());
         }
+    }
+
+    IEnumerator TimeDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        // Destroy the player sphere
+        Destroy(gameObject);
     }
 }
