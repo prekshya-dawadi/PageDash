@@ -18,5 +18,6 @@ public class SquashCharacter : MonoBehaviour
 
         // Destroy the player sphere
         Destroy(GameObject.FindWithTag("Character"));
+        Debug.Log("player ded");
     }
 }
