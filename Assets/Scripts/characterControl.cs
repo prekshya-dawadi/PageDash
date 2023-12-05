@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterControl : MonoBehaviour
 {
-    float top_boundary, bottom_boundary, left_boundary, right_boundary;
+    float top_boundary, bottom_boundary, left_boundary, right_boundary, movement_rate;
 
     void Start()
     {
@@ -12,6 +12,7 @@ public class CharacterControl : MonoBehaviour
         bottom_boundary = -3.5f;
         left_boundary = -5.0f;
         right_boundary = -0.77f;
+        movement_rate = 1.5f;
     }
 
     void Update()
@@ -24,7 +25,7 @@ public class CharacterControl : MonoBehaviour
             }
             else
             {
-                GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 2);
+                GetComponent<Rigidbody>().velocity = new Vector3(0, 0, movement_rate);
             }
         }
         if (Input.GetKey("down"))
@@ -35,7 +36,7 @@ public class CharacterControl : MonoBehaviour
             }
             else
             {
-                GetComponent<Rigidbody>().velocity = new Vector3(0, 0, -2);
+                GetComponent<Rigidbody>().velocity = new Vector3(0, 0, -movement_rate);
             }
         }
         if (Input.GetKey("right"))
@@ -47,7 +48,7 @@ public class CharacterControl : MonoBehaviour
             }
             else
             {
-                GetComponent<Rigidbody>().velocity = new Vector3(2, 0, 0);
+                GetComponent<Rigidbody>().velocity = new Vector3(movement_rate, 0, 0);
 
             }
         }
@@ -60,7 +61,7 @@ public class CharacterControl : MonoBehaviour
             }
             else
             {
-                GetComponent<Rigidbody>().velocity = new Vector3(-2, 0, 0);
+                GetComponent<Rigidbody>().velocity = new Vector3(-movement_rate, 0, 0);
 
             }
         }

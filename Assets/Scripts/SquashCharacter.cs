@@ -17,6 +17,6 @@ public class SquashCharacter : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         // Destroy the player sphere
-        Destroy(gameObject);
+        Destroy(GameObject.FindWithTag("Character"));
     }
 }
