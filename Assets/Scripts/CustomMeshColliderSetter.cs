@@ -10,10 +10,10 @@ public class CustomMeshColliderSetter : MonoBehaviour
         // Assuming your prefab has a MeshFilter component
         MeshFilter meshFilter = GetComponentInChildren<MeshFilter>();
 
-        // if (meshCollider != null && meshFilter != null)
-        // {
+        if (meshCollider != null && meshFilter != null)
+        {
             // Assign the mesh from the MeshFilter to the MeshCollider
         meshCollider.sharedMesh = meshFilter.sharedMesh;
-        // }
+        }
     }
 }
