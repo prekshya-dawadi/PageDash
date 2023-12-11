@@ -8,10 +8,10 @@ public class CharacterControl : MonoBehaviour
 
     void Start()
     {
-        top_boundary = -0.2f;
-        bottom_boundary = -2f;
-        left_boundary = -2.0f;
-        right_boundary = -0.2f;
+        top_boundary = -0.1f;
+        bottom_boundary = -4f;
+        left_boundary = -5.0f;
+        right_boundary = -0.8f;
         movement_rate = 1.5f;
     }
 
