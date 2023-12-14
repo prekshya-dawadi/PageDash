@@ -3,9 +3,12 @@ using UnityEngine;
 public class FlipPage : MonoBehaviour
 {
     private bool flip = false;
-    private float flipDuration = 1.5f;  // Adjust the duration as needed
+    private float flipDuration = 3.0f;
     private float startTime;
-    void start(){
+    private float decayFactor = 0.98f; 
+
+    void Start()
+    {
     }
 
     void Update()
@@ -31,6 +34,16 @@ public class FlipPage : MonoBehaviour
 
     private void Rotate()
     {
+        int currentScore = FindObjectOfType<rotationScore>().IncrementScore();
+        flipDuration = CalculateNewFlipDuration(currentScore);
+        Debug.Log("Current Speed: " + flipDuration);
+
         startTime = Time.time;
+    }
+
+    // new flipDuration based on the current score
+    private float CalculateNewFlipDuration(int score)
+    {
+        return Mathf.Max(0.3f, flipDuration * Mathf.Pow(decayFactor, score)); // flipDuration doesn't go below a minimum value
     }
 }
