@@ -11,7 +11,7 @@ public class FlipManager : MonoBehaviour
     public GameObject fifthPage;
     GameObject[] pageCollection = new GameObject[5];
     private bool isFirstObjectFlipping = false;
-    // public rotationScore rotationScore;
+    public rotationScore rotationScore;
 
 
     void Start()
@@ -31,8 +31,9 @@ public class FlipManager : MonoBehaviour
         if (flipPageComponent != null)
         {
             flipPageComponent.StartFlip();
-            // Debug.Log(" page flipped");
-            // rotationScore.IncrementScore();
+            int updatedScore = rotationScore.IncrementScore();
+
+
         }
         else
         {
@@ -51,5 +52,5 @@ public class FlipManager : MonoBehaviour
         }
     }
 
-    
+
 }
