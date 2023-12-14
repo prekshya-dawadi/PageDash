@@ -9,6 +9,7 @@ public class FlipManager : MonoBehaviour
     public GameObject thirdPage;
     public GameObject fourthPage;
     public GameObject fifthPage;
+    // public SquashCharacter character;
     GameObject[] pageCollection = new GameObject[5];
     private bool isFirstObjectFlipping = false;
     public rotationScore rotationScore;
@@ -49,6 +50,8 @@ public class FlipManager : MonoBehaviour
         {
             isFirstObjectFlipping = false;
             StartFlip(pageCollection[Random.Range(0, pageCollection.Length)]);
+        // } else if(character.finish_flag == true){
+        //     Application.Quit();
         }
     }
 

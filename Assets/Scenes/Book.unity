@@ -414,6 +414,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db05bfdc0bb7a574bab7016afd8dc7e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flipstop: {fileID: 0}
+  finish_flag: 0
 --- !u!1 &529952374
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,6 +693,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db05bfdc0bb7a574bab7016afd8dc7e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flipstop: {fileID: 0}
+  finish_flag: 0
 --- !u!1 &815498611
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,6 +919,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db05bfdc0bb7a574bab7016afd8dc7e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flipstop: {fileID: 0}
+  finish_flag: 0
 --- !u!1 &882378973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1656,6 +1662,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db05bfdc0bb7a574bab7016afd8dc7e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flipstop: {fileID: 0}
+  finish_flag: 0
 --- !u!1 &1645619810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1908,6 +1916,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db05bfdc0bb7a574bab7016afd8dc7e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flipstop: {fileID: 0}
+  finish_flag: 0
 --- !u!23 &102847132392720613
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2027,6 +2037,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db05bfdc0bb7a574bab7016afd8dc7e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flipstop: {fileID: 0}
+  finish_flag: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
