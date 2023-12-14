@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FlipManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class FlipManager : MonoBehaviour
     public GameObject fifthPage;
     GameObject[] pageCollection = new GameObject[5];
     private bool isFirstObjectFlipping = false;
+    public rotationScore rotationScore;
+
 
     void Start()
     {
@@ -28,6 +31,9 @@ public class FlipManager : MonoBehaviour
         if (flipPageComponent != null)
         {
             flipPageComponent.StartFlip();
+            int updatedScore = rotationScore.IncrementScore();
+
+
         }
         else
         {
@@ -45,4 +51,6 @@ public class FlipManager : MonoBehaviour
             StartFlip(pageCollection[Random.Range(0, pageCollection.Length)]);
         }
     }
+
+
 }
